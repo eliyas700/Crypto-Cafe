@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from "react";
+import CoinCard from "../CoinCard/CoinCard";
 
 const Coins = () => {
   const [crypto, setCrypto] = useState([]);
@@ -11,7 +12,17 @@ const Coins = () => {
   }, []);
   return (
     <div>
-      <h2>This is From Coins Section</h2>
+      <h2 className="text-3xl font-bold  text-center mt-16  text-gray-700">
+        Available Crypto Currencies
+      </h2>
+      <p className="text-center py-5 text-xl font-semibold mb-20">
+        Total Coins:{crypto.length}
+      </p>
+      <div className=" w-[90%] mx-auto grid grid-cols-4 gap-20">
+        {crypto.map((item) => (
+          <CoinCard key={item.id} coin={item}></CoinCard>
+        ))}
+      </div>
     </div>
   );
 };
