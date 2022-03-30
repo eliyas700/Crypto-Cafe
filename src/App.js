@@ -2,7 +2,9 @@ import { Routes, Route, Link } from "react-router-dom";
 import "./App.css";
 import About from "./Components/About/About";
 import Coins from "./Components/Coins/Coins";
+import BdOffice from "./Components/Contact/BdOffice";
 import Contact from "./Components/Contact/Contact";
+import UsOffice from "./Components/Contact/UsOffice";
 import Header from "./Components/Header/Header";
 import Home from "./Components/Home/Home";
 
@@ -13,7 +15,10 @@ function App() {
       <Routes>
         <Route path="/" element={<Home></Home>}></Route>
         <Route path="/coins" element={<Coins />} />
-        <Route path="/contact" element={<Contact />} />
+        <Route path="/contact" element={<Contact />}>
+          <Route path="us-office" element={<UsOffice />}></Route>
+          <Route path="bd-office" element={<BdOffice />}></Route>
+        </Route>
         <Route path="/about" element={<About />} />
       </Routes>
     </div>
