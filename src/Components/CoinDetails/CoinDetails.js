@@ -3,9 +3,9 @@ import { useParams } from "react-router-dom";
 import Spinner from "../Spinner/Spinner";
 
 const CoinDetails = () => {
-  const { id } = useParams();
   const [coin, setCoin] = useState({});
   const [loading, setLoading] = useState(false);
+  const { id } = useParams();
   useEffect(() => {
     setLoading(true);
     const url = `https://api.coingecko.com/api/v3/coins/${id}`;
