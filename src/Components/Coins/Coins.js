@@ -26,7 +26,7 @@ const Coins = () => {
           <p className="text-center py-5 text-xl font-semibold mb-20">
             Total Coins:{crypto.length}
           </p>
-          <div className=" w-[90%] mx-auto grid grid-cols-4 gap-20">
+          <div className=" w-[90%] mx-auto grid grid-cols-1 md:grid-cols-4 gap-20">
             {crypto.map((item) => (
               <CoinCard key={item.id} coin={item}></CoinCard>
             ))}
